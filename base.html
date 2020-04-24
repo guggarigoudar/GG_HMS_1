@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GG_HMS</title>
+<!--
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css">
+-->
+    <link rel="stylesheet" type="text/css" href="/static/css/GG_HMS.css">
+    
+</head>
+
+<body>
+
+<div class="A">
+   
+    <a href="/index/">HOME</a>|
+    <a href="/OPD/">OPD REGISTRATION</a>|
+    <a href="/IPD/">IPD REGISTRATION</a>|
+    <a href="/VIEWDATA/">OPD DATA</a>|
+    <a href="/OPDPROFILE/">OPD PROFILE</a>|
+    <a href="">EMPTY</a>|
+    <a href="{% url 'OPD' %}"><b>OPD</b></a>|
+    <a href="{% url 'VIEWDATA' %}">{{myData.title}}</a>|
+    <a href="{% url 'IPD' %}">Another_IPD</a>|
+    <a href="http://www.google.com">GOOGLE</a>|
+    
+    <a href="/admin/">ADMIN</a>|
+    <a href="/admin/login/?next=/admin/">LOG IN</a>|
+
+</div>
+
+<div class="B">
+    {% block content %}
+    {% endblock content %}
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    td{
+        
+        border:1px solid #AAA;
+        font-size: 14px;
+        font-family:Courier;
+        padding: 2px;
+        text-align:center;
+    }
+    
+</style>
+
+<h3>OPD DATA</h3>
+<form method="POST" id='form_1'>
+    {% csrf_token %}
+<table>    
+    <tr style="font-weight:bold; text-align:center;">
+        <td>S.No</td>
+        <td>Record Id</td>
+        <td>OP No</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>mobile</td>
+        <td>Unit</td>
+        <td>Dept</td>
+        <td>Address</td>
+        <td>Address</td>
+        <td>Photo</td>
+        <td>Link</td>
+        </tr>
+    {% for x in myData %}
+
+    <tr>
+        <td>{{ forloop.counter }} </td>
+        <td>
+            {{ x.counter }}
+        </td>
+        <td>
+            {{ x.opno  }} 
+        </td>
+        <td>
+            {{ x.first_name  }}
+        </td>
+        <td>
+            {{ x.age }}{{ x.age_descriptor }}   
+        </td>
+        <td>
+            {{ x.mobile|slice:":4" }}****{{ x.mobile|slice:"8:" }}  
+        </td>
+        <td>
+            {{ x.unit }}   
+        </td>
+        <td>
+            {{ x.department }}   
+        </td>
+        <td>
+            {{ x.address_1 }}   
+        </td>
+        <td>
+            {{ x.address_2 }}   
+        </td>
+        <td>
+           <!--
+            <img src="../{{x.photo|slice:':3,2'}}" height="50px" width="50px"   />
+-->
+      
+                      
+           <img src=  "../{{ x.photo|cut:'HMS/' }}" height="50px" width="50px"/>
+        </td>
+        <td>
+
+          <a style="color:red;" href="../{{ x.photo|cut:'HMS/' }}">{{ x.photo|cut:'HMS/static/images/' }}</a>
+        </td>
+    </tr>           
+    {% endfor %}    
+</table>        
+<br>
+
+
+</form>
+{% endblock content %}

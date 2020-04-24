@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>IPD REGISTRATION</h3>
+
+
+<form method="POST" id="form1">
+
+    {% csrf_token %}
+    <!--
+            {{ form }}
+    -->
+</form>
+
+<table>
+    {% for x in form %}
+    <th>
+        {{ x.name|upper }}
+    </th>
+    <td>
+        {{ x }}
+    </td>
+
+    {% if forloop.counter|divisibleby:4 %}
+    <tr></tr>
+    {%endif%}
+
+    {% endfor %}
+</table>
+
+
+<br>
+<br>
+<div style="text-align:center;">
+    <button form="form1" type="submit"  value="Save">Save</button>
+    <button>Print</button>
+    <button>New</button>
+</div>
+<br>
+{% endblock content %}

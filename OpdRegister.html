@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>OPD REGISTRATION</h3>
+
+
+<form method="POST" id="form_1" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+ <ul>
+
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+        
+        <div style="text-align: center;"    >
+        <div class="error_messages">
+    <li>
+     
+          <b>  {{field.name|upper}}</b> : {{ error }}
+    </li>
+        </div>        
+    </div>
+        {% endfor %}
+        
+{% endfor %}
+</ul>
+Hello
+<img src={{ form.photo }} alt="photo"/>
+    <!--
+    {% for error in form.non_field_errors %}
+        <div class="A">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+-->    
+{% endif %}
+
+
+
+    {% for field in form %}
+        {% for message in field.messages %}
+            <div style="background-color: blueviolet;">
+                <strong>{{ error }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for message in form.non_field_messages %}
+        <div class="A">
+            <strong>{{ message }}</strong>
+        </div>
+    {% endfor %}
+
+
+
+
+
+    <!--
+            {{ form }}
+    -->
+    <table>
+    {{ prefix }}    
+    {% for x in form %}
+    <th>
+        {{ x.name|upper }}
+    </th>
+    <td>
+        {{ x }}
+        
+    </td>
+
+    {% if forloop.counter|divisibleby:4 %}
+    <tr></tr>
+    {%endif%}
+    {% endfor %}
+    
+</table>
+
+<br>
+<br>
+<div style="text-align:center;">
+    <button form="form_1" type="submit"  value="submit">Save</button>
+    <button>Print</button>
+    
+    <button><a  href="../OPD/">NEW</a></button>
+</div>
+<br>
+</form>
+{% endblock content %}

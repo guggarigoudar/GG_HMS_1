@@ -1,0 +1,90 @@
+/* Myapp/static/css/base.css */
+
+a{
+	color:#ddd;
+	text-decoration:none;
+	font-size:12px;
+}
+a:hover{
+	color:#00f;
+}
+.A{
+    
+background-color:#678; 
+color:white;  
+text-align:center;  
+padding: 10px; 
+font-family: Calibri;
+height: 23px; 
+vertical-align: middle; 
+}
+.B{	
+	width: 1000px; 
+	text-align:center; 
+	border: solid #00f thin; 
+	margin-left: auto; 
+	margin-right: auto;
+	background-color:#fff;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+	text-align:left;
+	background-color: #fff;
+}
+select{
+	width:128px;
+	font-size:10px;
+	height:20px;
+}
+select:hover{
+	background-color:var(--bg_color_A);
+}
+select:focus{
+	background-color:var(--bg_color_A);
+}
+input{
+	width:125px;
+	border-radius: 0px;
+}
+input:hover{
+	background-color:#eef;
+}
+input:focus{
+	background-color:#eef;
+}
+
+th{
+
+	font-family:Calibri;
+    font-size:9pt;
+	color:#678;
+	width:100px;
+}
+button{
+	width:100px;
+	border-radius: 0px;
+	color:#678;
+}
+button:hover{
+	background-color:#eef;
+	
+}
+button:focus{
+	background-color:#abc;
+}
+h3{
+	color:#678;
+}
+.error_messages{
+
+color:#d00;
+text-align: left;
+width: 500px;
+margin-left: auto;
+margin-right: auto;
+font-family: 'Courier New', Courier, monospace;
+font-size: small;
+
+}

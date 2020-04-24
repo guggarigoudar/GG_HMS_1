@@ -1,0 +1,41 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    td{
+        
+        border:1px solid #AAA;
+        font-size: 14px;
+        font-family:Courier;
+        padding: 2px;
+        text-align:center;
+    }
+    
+</style>
+
+<h3>OPD PROFILE</h3>
+<form method="POST" id='form_1'>
+{% csrf_token %}
+{{ myData }}
+{% for x in myData %}
+
+{{ x.mobile  }} {{ x.first_name}} {{ x.age }} {{ x.age_descriptor }}
+
+<br>
+ {% endfor %} 
+
+
+    
+   
+
+<br>
+
+
+
+
+
+
+</form>
+{% endblock content %}
